@@ -1,9 +1,8 @@
-FROM centos:7
+FROM raspbian/stretch
 
-RUN yum update -y \
- && yum -y install epel-release \
- && yum update -y \
- && yum install -y jq \
+RUN apt-get update -y \
+ && apt-get update -y \
+ && apt-get install -y jq less curl \
  && mkdir -p /opt/hnt_monitor
 
 COPY src/ /opt/hnt_monitor/
